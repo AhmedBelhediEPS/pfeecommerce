@@ -1,0 +1,10 @@
+# Backend
+Backend/target/
+Backend/.idea/
+
+# Frontend
+FrontEnd/pfeecommerce/node_modules/
+
+
+# FrontendClient
+FrontEndClient/pfeecommerceclient/node_modules/
