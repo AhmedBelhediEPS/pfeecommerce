@@ -1,0 +1,8 @@
+# Pour ignorer les fichiers Python dans le calcul
+*.py linguist-detectable=false
+*.ipynb linguist-detectable=false
+venv/ linguist-detectable=false
+
+# Forcer les fichiers Angular et Java à être détectés
+*.ts linguist-language=TypeScript
+*.java linguist-language=Java
