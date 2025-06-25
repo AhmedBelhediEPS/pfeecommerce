@@ -1,0 +1,229 @@
+
+
+
+    <!-- content -->
+    <div class="content ">
+        
+      
+    
+        <div class="row g-4 mb-4">
+            <div class="col-md-8">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">New Providers</h6>
+                        <div id="new-customers"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex mb-4">
+                            <h6 class="card-title mb-0">Provider Rating</h6>
+                            <div class="dropdown ms-auto">
+                                <a href="#" data-bs-toggle="dropdown" class="btn btn-sm" aria-haspopup="true"
+                                   aria-expanded="false">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="#" class="dropdown-item">View Detail</a>
+                                    <a href="#" class="dropdown-item">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="display-6">3.0</div>
+                            <div class="d-flex justify-content-center gap-3 my-3">
+                                <i class="bi bi-star-fill icon-lg text-warning"></i>
+                                <i class="bi bi-star-fill icon-lg text-warning"></i>
+                                <i class="bi bi-star-fill icon-lg text-warning"></i>
+                                <i class="bi bi-star-fill icon-lg text-muted"></i>
+                                <i class="bi bi-star-fill icon-lg text-muted"></i>
+                                <span>(318)</span>
+                            </div>
+                        </div>
+                        <div class="text-muted d-flex align-items-center justify-content-center">
+                            <span class="text-success me-3 d-block">
+                                <i class="bi bi-arrow-up me-1 small"></i>+35
+                            </span> Point from last month
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-md-6 m-auto">
+                                <div id="customer-rating"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-outline-primary btn-icon">
+                                <i class="bi bi-download"></i> Download Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+      
+    
+        <div class="table-responsive">
+            <table class="table table-custom table-lg mb-0" id="customers">
+                <thead>
+                <tr>
+                    <!-- <th>
+                        <input class="form-check-input select-all" type="checkbox" data-select-all-target="#customers" id="defaultCheck1">
+                    </th> -->
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Matricule</th>
+                    <th>Service</th>
+                    <th>Societe</th>
+
+                    <th>Statut</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+    
+    
+                <tr *ngFor="let p of listprovider ;let index=index">
+                    <!-- <td>
+                        <input class="form-check-input" type="checkbox">
+                    </td> -->
+                    <td>
+                        {{index+1}}  
+                    </td>
+                    <td>
+                        {{p?.username}}
+                    </td>
+                    <td>{{p?.email}}</td>
+                    <td>{{p?.matricule}}</td>
+               
+                    <td>{{p?.service}}</td>
+                    <td>{{p?.societe}}</td>
+
+                    <td>
+                        <span class="badge bg-success">Active</span>
+                    </td>
+                    <td class="text-end">
+                        <div class="d-flex">
+                            <div class="dropdown ms-auto">
+                                <a href="#" data-bs-toggle="dropdown"
+                                   class="btn btn-floating"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-three-dots"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a data-bs-toggle="modal" data-bs-target="#detailcustomer" class="dropdown-item" (click)="open(p)">Detail</a>
+                                                            
+                                    <a (click)="deleteprovider(p.id)" class="dropdown-item">Supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+      
+           
+                </tbody>
+            </table>
+        </div>
+    
+        <!-- <nav class="mt-4" aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav> -->
+    
+        </div>
+        <!-- ./ content -->
+    
+    
+    
+    
+         <!-- Modal Detail Customer -->
+         <div class="modal" tabindex="-1" id="detailcustomer">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Details :</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+    
+    
+                <div class="modal-body">
+                    
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <!-- <div class="avatar avatar-xl mb-3">
+                                    <img width="100" height="100" src="http://localhost:8080/produit/files/{{customer?.image}}">
+                                </div> -->
+                                <div class="mb-4">
+                                    <h6>{{provider?.username}}</h6>
+                                    <div class="text-muted"></div>
+                                </div>
+    
+    
+    
+                                <div class="mb-4">
+                                    <h6>{{provider?.email}}</h6>
+                                    <div class="text-muted"></div>
+                                </div>
+    
+                                <div class="mb-4">
+                                    <h6>{{provider?.matricule}}</h6>
+                                    <div class="text-muted"></div>
+                                </div>
+                                <div class="mb-4">
+                                    <h6>{{provider?.service}}</h6>
+                                    <div class="text-muted"></div>
+                                </div>
+                                <div class="mb-4">
+                                    <h6>{{provider?.societe}}</h6>
+                                    <div class="text-muted"></div>
+                                </div>
+    
+                              
+    
+    
+<!--     
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="btn btn-outline-primary btn-icon">
+                                        <i class="bi bi-person-plus"></i> Follow
+                                    </a>
+                                    <div class="dropup">
+                                        <a href="#" data-bs-toggle="dropdown" class="btn btn-outline-primary" aria-haspopup="true" aria-expanded="false">
+                                            <i class="bi bi-three-dots"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a href="#" class="dropdown-item">Profile</a>
+                                            <a href="#" class="dropdown-item">Message</a>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        
+                    </div>
+    
+                
+                </div>
+    
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+              </div>
+    
+              
+            </div>
+          

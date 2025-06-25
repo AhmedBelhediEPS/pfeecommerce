@@ -1,0 +1,284 @@
+
+
+
+
+
+   
+    
+    <!-- content -->
+    <div class="content ">
+        
+       
+
+
+
+        <!-- Recherche -->
+        <!-- <form class="search-form">
+            <div class="input-group">
+                <button class="btn btn-outline-light" type="button" id="button-addon1">
+                    <i class="bi bi-search"></i>
+                </button>
+                <input type="text" class="form-control" placeholder="Search..."
+                       aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <a href="#" class="btn btn-outline-light close-header-search-bar">
+                    <i class="bi bi-x"></i>
+                </a>
+            </div>
+        </form>
+        <br> -->
+<!-- Recherche -->  
+    
+        <div class="row">
+            <div class="col-md-8">
+                <!-- <div class="card">
+                    <div class="card-body">
+                        <div class="d-md-flex gap-4 align-items-center">
+                            <div class="d-none d-md-flex">All Categories</div>
+                            <div class="d-md-flex gap-4 align-items-center">
+                                <form class="mb-3 mb-md-0">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <select class="form-select">
+                                                <option>Sort by</option>
+                                                <option value="desc">Desc</option>
+                                                <option value="asc">Asc</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-select">
+                                                <option value="10">10</option>
+                                                <option value="20">20</option>
+                                                <option value="30">30</option>
+                                                <option value="40">40</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="dropdown ms-auto">
+                                <a href="#" data-bs-toggle="dropdown"
+                                   class="btn btn-primary dropdown-toggle"
+                                   aria-haspopup="true" aria-expanded="false">Actions</a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="#" class="dropdown-item">Action</a>
+                                    <a href="#" class="dropdown-item">Another action</a>
+                                    <a href="#" class="dropdown-item">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+    
+                <!-- <p></p>
+                &nbsp;&nbsp; -->
+    
+                <button class="btn btn-primary btn-icon" data-bs-toggle="modal" data-bs-target="#exampleModal2" *ngIf="isadmin()">
+                     Ajouter une catégorie
+                </button>
+
+
+
+                <!-- data-toggle="modal" data-target="#exampleModal2" -->
+
+    
+    
+                <div class="table-responsive">
+                    <table class="table table-custom table-lg mb-0" id="categories">
+                        <thead>
+                        <tr>
+                            
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Description</th>
+                            
+                         
+                            <th class="text-end">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let p of listcategory ;let index=index">
+    
+                            
+    
+                            <td>    
+                                {{index+1}}   
+                            </td>
+    
+    
+                            <td> 
+                                {{p.titre}}
+                            </td>
+    
+                            <td>
+                                {{p.description}}
+                            </td>
+                            
+                            
+                            <td class="text-end">
+                                <div class="d-flex">
+                                    <div class="dropdown ms-auto">
+                                        <a href="#" data-bs-toggle="dropdown"
+                                           class="btn btn-floating"
+                                           aria-haspopup="true" aria-expanded="false">
+                                            <i class="bi bi-three-dots"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end">
+                                            <a class="dropdown-item" (click)="deletecategory(p.id)">Supprimer</a>
+                                           
+                                            <a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="open(p)">Mettre à jour</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                     
+                        </tbody>
+                    </table>
+    
+    
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                    
+    
+                </div>
+                <!-- <nav class="mt-4" aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav> -->
+            </div>
+          
+        </div>
+    
+        </div>
+        <!-- ./ content -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Modal Update Category -->
+    <div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Update Category</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="categoryform">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Titre</label>
+                  <input type="text" class="form-control" formControlName="titre" id="recipient-name">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Description</label>
+                    <input type="text" class="form-control" formControlName="description" id="recipient-name">
+                  </div>
+    
+                
+                
+              </form>
+            </div>
+    
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updatecategory()">Update</button>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Modal Add Category -->
+    <div class="modal fade2"  id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ajouter une catégorie</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="addcategoryform">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Titre</label>
+                  <input type="text" class="form-control" formControlName="titre" id="recipient-name">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Description</label>
+                    <input type="text" class="form-control" formControlName="description" id="recipient-name">
+                  </div>
+    
+                
+                
+              </form>
+            </div>
+    
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addcategory()">Ajouter</button>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    
+
+
+
+<!-- 
+     <div class="container">
+        <form class="user" [formGroup]="addcategoryform">
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input type="text" class="form-control form-control-user" id="titre" formControlName="title" placeholder="titre">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control form-control-user" id="description" formControlName="description" placeholder="description">
+            </div>
+            <div class="form-group row">
+            <button type="submit" class="btn btn-primary" (click)="addcategory()" >Submit</button>
+            </div>
+        </form>
+        <hr>
+    </div> -->
+
+
+ 

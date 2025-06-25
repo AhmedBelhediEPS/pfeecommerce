@@ -1,0 +1,113 @@
+
+
+    <div class="ps-page--single" id="contact-us">
+     <br>
+       
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1616.9245037946662!2d10.59781371744386!3d35.8527058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd8bc01b9c915f%3A0xf1e242ab47145bc0!2sITGate%20Training!5e0!3m2!1sfr!2stn!4v1680513727257!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <!-- <iframe title="SSRS" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=bb9018f3-5888-40c9-991a-dcecb4e1a071&autoAuth=true&ctid=db990e66-245b-4e4e-a9b6-acc4026eaa83" frameborder="0" allowFullScreen="true"></iframe> -->
+
+
+        <!-- <div class="ps-contact-info">
+            <div class="container">
+                <div class="ps-section__header">
+                    <h3>Contact Us For Any Questions</h3>
+                </div>
+                <div class="ps-section__content">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-block--contact-info">
+                                <h4>Contact Directly</h4>
+                                <p><a href="#"><span class="__cf_email__" data-cfemail="b6d5d9d8c2d7d5c2f6dbd7c4c2d0c3c4cf98d5d9db">[email&#160;protected]</span></a><span>(+004) 912-3548-07</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-block--contact-info">
+                                <h4>Head Quater</h4>
+                                <p><span>17 Queen St, Southbank, Melbourne 10560, Australia</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-block--contact-info">
+                                <h4>Work With Us</h4>
+                                <p><span>Send your CV to our email:</span><a href="#"><span class="__cf_email__" data-cfemail="abc8cad9ceced9ebc6cad9dfcdded9d285c8c4c6">[email&#160;protected]</span></a></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-block--contact-info">
+                                <h4>Customer Service</h4>
+                                <p><a href="#"><span class="__cf_email__" data-cfemail="d7b4a2a4a3b8bab2a5b4b6a5b297bab6a5a3b1a2a5aef9b4b8ba">[email&#160;protected]</span></a><span>(800) 843-2446</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-block--contact-info">
+                                <h4>Media Relations</h4>
+                                <p><a href="#"><span class="__cf_email__" data-cfemail="87eae2e3eee6c7eae6f5f3e1f2f5fea9e4e8ea">[email&#160;protected]</span></a><span>(801) 947-3564</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 ">
+                            <div class="ps-block--contact-info">
+                                <h4>Vendor Support</h4>
+                                <p><a href="#"><span class="__cf_email__" data-cfemail="93e5f6fdf7fce1e0e6e3e3fce1e7d3fef2e1e7f5e6e1eabdf0fcfe">[email&#160;protected]</span></a><span>(801) 947-3100</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="ps-contact-form">
+            <div class="container">
+                <form [formGroup]="contactform" class="ps-form--contact-us" action="https://nouthemes.net/html/martfury/index.html" method="get">
+                    <h1>Nous contacter</h1>
+                    <div class="row">
+                        <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="name" placeholder="Name *">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="email" placeholder="Email *">
+                            </div>
+                        </div> -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <div class="form-group">
+                                <input class="form-control" type="text" formControlName="subject" placeholder="Sujet">
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" formControlName="message" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group submit">
+                        <button class="ps-btn" (click)="addcontact()">Envoyer message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="ps-newsletter">
+        <div class="container">
+            <form class="ps-form--newsletter" action="https://nouthemes.net/html/martfury/do_action" method="post">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="ps-form__left">
+                            <h3>Newsletter</h3>
+                            <p>Subcribe to get information about products and coupons</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                        <div class="ps-form__right">
+                            <div class="form-group--nest">
+                                <input class="form-control" type="email" placeholder="Email address">
+                                <button class="ps-btn">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>   -->

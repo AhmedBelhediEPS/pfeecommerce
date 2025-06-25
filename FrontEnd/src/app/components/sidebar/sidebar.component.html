@@ -1,0 +1,134 @@
+
+<div class="menu">
+    <div class="menu-header">
+        <a routerLink="/home" class="menu-header-logo">
+            <img src="assets/tptlogovf.png" alt="logo">
+        </a>
+        <a href="index.html" class="btn btn-sm menu-close-btn">
+            <i class="bi bi-x"></i>
+        </a>
+    </div>
+
+    <div class="menu-body">
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center" data-bs-toggle="dropdown">
+                <div class="avatar me-3">
+                    <img src="assets/assets/images/user/man_avatar3.jpg"
+                         class="rounded-circle" alt="image">
+                </div>
+                <div>
+                    <div class="fw-bold">Informations sur mon compte</div>
+                    <!-- <small class="text-muted">Sales Manager</small> -->
+                </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end">
+                <a routerLink="/home/profile" class="dropdown-item d-flex align-items-center">
+                    <i class="bi bi-person dropdown-item-icon"></i> Profile
+                </a>
+                <!-- <a href="#" class="dropdown-item d-flex align-items-center">
+                    <i class="bi bi-envelope dropdown-item-icon"></i> Inbox
+                </a> -->
+                <!-- <a href="#" class="dropdown-item d-flex align-items-center" data-sidebar-target="#settings">
+                    <i class="bi bi-gear dropdown-item-icon"></i> Settings
+                </a> -->
+                <a (click)="logout()" class="dropdown-item d-flex align-items-center text-danger"
+                   target="_blank">
+                    <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
+                </a>
+            </div>
+        </div>
+
+
+        
+        <ul>
+            <li class="menu-divider">E-Commerce</li>
+            <li>
+                <a  class="active"
+                   routerLink="/home">
+                    <span class="nav-link-icon">
+                        <i class="bi bi-bar-chart"></i>
+                    </span>
+                    <span>Tableau de bord</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#">
+                    <span class="nav-link-icon">
+                        <i class="bi bi-receipt"></i>
+                    </span>
+                    <span>Commandes</span>
+                </a>
+                <ul>
+                    <li>
+                        <a  routerLink="/home/listorder">Liste des commandes</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="nav-link-icon">
+                        <i class="bi bi-truck"></i>
+                    </span>
+                    <span>Produits</span>
+                </a>
+                <ul>
+                    <li>
+                        <a  routerLink="/home/listproduct">Liste
+                            des produits</a>
+                    </li>
+                    <li>
+                        <a  routerLink="/home/listcategory">Liste des catégories</a>
+                    </li>
+                    <li>
+                        <a  routerLink="/home/listsubcategory">Liste des souscatégories</a>
+                    </li>
+                    
+                </ul>
+            </li>
+
+
+            
+            <li>
+                <a  routerLink="/home/listcustomer">
+                    <span class="nav-link-icon">
+                        <i class="bi bi-person-badge"></i>
+                    </span>
+                    <span>Clients</span>
+                </a>
+            </li>
+
+            <li>
+                <a  routerLink="/home/listprovider">
+                    <span class="nav-link-icon">
+                        <i class="bi bi-person-badge"></i>
+                    </span>
+                    <span>Fournisseurs</span>
+                </a>
+            </li>
+
+            <!-- <li>
+                <a href="#">
+                    <span class="nav-link-icon">
+                        <i class="bi bi-receipt"></i>
+                    </span>
+                    <span>Invoices</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="invoices.html"
+                           >List</a>
+                    </li>
+                    <li>
+                        <a href="invoice-detail.html"
+                           >Detail</a>
+                    </li>
+                </ul>
+            </li> -->
+
+           
+          
+        </ul>
+    </div>
+</div>

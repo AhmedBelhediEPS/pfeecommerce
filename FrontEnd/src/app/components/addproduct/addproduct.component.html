@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="centered-element">
+        <form class="user" [formGroup]="productform">
+
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Nom :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Saisir le nom du produit" formControlName="nom">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Prix :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Saisir le prix du produit" formControlName="prix">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput3" class="form-label">Description :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Saisir une description" formControlName="description">
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput3" class="form-label">Quantité :</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Saisir la quantité" formControlName="quantite">
+  </div>
+
+  <div class="col-sm-6 mb-sm-0">
+    <label>Fournisseur :</label>
+     
+  <select class="form-select" aria-label="Default select example" formControlName="provider_id">
+    
+    <option *ngFor="let fournisseur of listprovider" [value]="fournisseur.id">{{fournisseur.username}}</option>
+  </select>
+  </div>
+
+
+  <div class="col-sm-6 mb-sm-0">
+    <label>Souscategorie :</label>
+    
+    <select class="form-select" formControlName="subcategory_id">
+        <option *ngFor="let souscategorie of listsubcategory" [value]="souscategorie.id">
+{{souscategorie.titre}}
+        </option>
+
+    </select>
+
+</div>
+
+
+
+
+<!--  -->
+<div class="form-group">
+    <input type="file" (change)="onFileChange($event)" multiple name="files" class="form-control form-control-user" id="exampleRepeatPassword">
+    
+</div>
+<!--  -->
+
+
+
+
+<div class="center"><button type="submit" class="btn btn-primary" (click)="addproduct()">Ajouter</button>
+</div><br>
+
+
+
+
+        </form>
+    </div>
+</div>

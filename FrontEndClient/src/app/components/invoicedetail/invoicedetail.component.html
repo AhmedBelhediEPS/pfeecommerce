@@ -1,0 +1,109 @@
+
+    <main class="ps-page--my-account">
+        
+        <section class="ps-section--account">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="ps-section__left">
+                            <aside class="ps-widget--account-dashboard">
+                                <div class="ps-widget__header"><img src="http://localhost:8080/client/files/{{customer?.image}}" alt="" />
+                                    <figure>
+                                        <figcaption>{{customer?.username}}</figcaption>
+                                        <p><a href="#"><span class="__cf_email__" data-cfemail="b3c6c0d6c1ddd2ded6f3d4ded2dadf9dd0dcde">{{customer?.email}}</span></a></p>
+                                    </figure>
+                                </div>
+                                <div class="ps-widget__content">
+                                    <ul>
+                                        <li><a routerLink="/profile"><i class="icon-user"></i> Informations</a></li>
+                                        <!-- <li><a href="#"><i class="icon-alarm-ringing"></i> Notifications</a></li> -->
+                                        <li class="active"><a routerLink="/invoices"><i class="icon-papers"></i> Factures</a></li>
+                                        <!-- <li><a href="#"><i class="icon-map-marker"></i> Address</a></li> -->
+                                        <!-- <li><a href="#"><i class="icon-store"></i> Recent Viewed Product</a></li> -->
+                                        <li><a href="#"><i class="icon-heart"></i> Wishlist</a></li>
+                                        <!-- <li><a href="#"><i class="icon-power-switch"></i>Logout</a></li> -->
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="ps-section__right">
+                            <div class="ps-section--account-setting">
+                                <div class="ps-section__header">
+                                    <h3>Facture #500884010 -<strong>Successful delivery</strong></h3>
+                                </div>
+                                <div class="ps-section__content">
+                                    <div class="row">
+                                        <div class="col-md-4 col-12">
+                                            <figure class="ps-block--invoice">
+                                                <figcaption>Address</figcaption>
+                                                <div class="ps-block__content"><strong>John Walker</strong>
+                                                    <p>Address: 3481 Poe Lane, Westphalia, Kansas</p>
+                                                    <p>Phone: 913-489-1853</p>
+                                                </div>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <figure class="ps-block--invoice">
+                                                <figcaption>Shipping Fee</figcaption>
+                                                <div class="ps-block__content">
+                                                    <p>Shipping Fee: Free</p>
+                                                </div>
+                                            </figure>
+                                        </div>
+                                        <div class="col-md-4 col-12">
+                                            <figure class="ps-block--invoice">
+                                                <figcaption>Payment</figcaption>
+                                                <div class="ps-block__content">
+                                                    <p>Payment Method: Visa</p>
+                                                </div>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table ps-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let p of order.produits">
+                                                    <td  >
+                                                        <div class="ps-product--cart">
+                                                            <div class="ps-product__thumbnail"><a href="product-default.html"><img src="img/products/shop/5.jpg" alt=""></a></div>
+                                                            <div class="ps-product__content"><a href="product-default.html">{{p?.nom}}</a>
+                                                                <p>Sold By:<strong> YOUNG SHOP</strong></p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td><span><i>$</i> 32.99</span></td>
+                                                    <td>{{p?.qteclient}}</td>
+                                                    <td><span><i>$</i> 32.99</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="ps-section__footer"><a class="ps-btn ps-btn--sm" routerLink="/invoices">Back to invoices</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   
+    </main>
+    <div id="back2top"><i class="icon icon-arrow-up"></i></div>
+    <div class="ps-site-overlay"></div>
+
+    <div id="loader-wrapper">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+ 

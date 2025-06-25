@@ -1,0 +1,22 @@
+.registration-form {
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px; /* Ajustez la valeur pour l'espacement vertical */
+    right: 10px; /* Ajustez la valeur pour l'espacement horizontal */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000; /* Couleur du bouton */
+  }
+  
+
+
+
+
+
+
+  

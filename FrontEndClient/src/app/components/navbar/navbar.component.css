@@ -1,0 +1,17 @@
+.selected {
+   
+    transition: background-color 1.5s;
+  }
+  
+  .selected:hover {
+    background-color: gold;
+    cursor: pointer;
+  }
+
+.greeting{
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+  text-align: center;
+}
+

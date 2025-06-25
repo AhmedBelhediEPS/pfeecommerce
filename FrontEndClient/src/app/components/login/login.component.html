@@ -1,0 +1,259 @@
+
+
+
+
+ 
+    <div class="ps-page--my-account">
+        
+        
+        <div class="ps-my-account">
+            <div class="container">
+                <form [formGroup]="loginform" class="ps-form--account ps-tab-root" method="get">
+                    <ul class="ps-tab-list">
+                        <li class="active"><a href="#sign-in">Se connecter</a></li>
+                        <li><a href="#register">S'inscrire</a></li>
+                    </ul>
+                    <div class="ps-tabs">
+                        <div class="ps-tab active" id="sign-in">
+                            <div class="ps-form__content">
+                                
+                                <h5>Se connecter à votre compte</h5>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" formControlName="username" placeholder="Username ou adresse mail">
+                                </div>
+                                <div class="form-group form-forgot">
+                                    <input class="form-control" type="password" formControlName="password" placeholder="Mot de passe"><a routerLink="/forgetpassword">Oublié ?</a>
+                                </div>
+                                <div class="form-group">
+                                    <div class="ps-checkbox">
+                                        <input class="form-control" type="checkbox" id="remember-me" name="remember-me" />
+                                        <!-- <label for="remember-me">Rememeber me</label> -->
+                                    </div>
+                                </div>
+                                <div class="form-group submtit">
+                                    <button class="ps-btn ps-btn--fullwidth" (click)="login()">Se connecter</button>
+                                </div>
+                           
+                            </div>
+
+                            <!-- <div class="ps-form__footer">
+                                <p>Connect with:</p>
+                                <ul class="ps-list--social">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div> -->
+                            <br>
+                        </div>
+
+
+                        
+                        <div class="ps-tab" id="register">
+                            <div class="ps-form__content">
+                                <form [formGroup]="signupform">
+                                <h5>Créer un compte</h5>
+
+                               
+
+
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="username" type="text" placeholder="Username">
+                                    <div *ngIf="signupform.get('username')?.invalid && signupform.get('username')?.touched" style="color:red">
+                                      <div *ngIf="signupform.get('username')?.hasError('required')">Ce champ est requis.</div>
+                                      <div *ngIf="signupform.get('username')?.hasError('pattern')">Le nom d'utilisateur n'est pas valide.
+                                    Il peut seulement contenir des lettres majiscules et miniscules.
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+
+                                  <div class="form-group">
+                                    <input class="form-control" formControlName="password" type="password" placeholder="Mot de passe">
+                                    <div *ngIf="signupform.get('password')?.invalid && signupform.get('password')?.touched" style="color:red">
+                                      <div *ngIf="signupform.get('password')?.hasError('required')">Ce champ est requis.</div>
+                                      <div *ngIf="signupform.get('password')?.hasError('pattern')">Le mot de passe n'est pas valide. 
+                                        Minimum 8 caractères dont une lettre majiscule, une lettre miniscule, un chiffre et un caractère spécial.
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+
+                                  <div class="form-group">
+                                    <input class="form-control" formControlName="email" type="text" placeholder="Adresse mail">
+                                    <div *ngIf="signupform.get('email')?.invalid && signupform.get('email')?.touched" style="color:red">
+                                      <div *ngIf="signupform.get('email')?.hasError('required')">Ce champ est requis.</div>
+                                      <div *ngIf="signupform.get('email')?.hasError('pattern')">L'adresse e-mail n'est pas valide.</div>
+                                    </div>
+                                  </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="adresse" type="text" placeholder="Adresse">
+                                    <div *ngIf="signupform.get('adresse')?.invalid && signupform.get('adresse')?.touched" style="color:red">
+                                        <div *ngIf="signupform.get('adresse')?.hasError('required')">Ce champ est requis.</div>
+                                        
+                                      </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="codepostal" type="text" placeholder="Code postal">
+                                    <div *ngIf="signupform.get('codepostal')?.invalid && signupform.get('codepostal')?.touched" style="color:red">
+                                        <div *ngIf="signupform.get('codepostal')?.hasError('required')">Ce champ est requis.</div>
+                                        
+                                      </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="pays" type="text" placeholder="Pays">
+                                    <div *ngIf="signupform.get('pays')?.invalid && signupform.get('pays')?.touched" style="color:red">
+                                        <div *ngIf="signupform.get('pays')?.hasError('required')">Ce champ est requis.</div>
+                                        
+                                      </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="telephone" type="text" placeholder="Telephone">
+                                    <div *ngIf="signupform.get('telephone')?.invalid && signupform.get('telephone')?.touched" style="color:red">
+                                        <div *ngIf="signupform.get('telephone')?.hasError('required')">Ce champ est requis.</div>
+                                        
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" formControlName="ville" type="text" placeholder="Ville">
+                                    <div *ngIf="signupform.get('ville')?.invalid && signupform.get('ville')?.touched" style="color:red">
+                                        <div *ngIf="signupform.get('ville')?.hasError('required')">Ce champ est requis.</div>
+                                        
+                                      </div>
+                                </div>
+
+                              
+
+
+                                <div class="input-group mb-3">
+                                    <!-- <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
+                                    </div> -->
+                                    <div class="custom-file">
+                                        <!-- <input type="file" class="custom-file-input"> -->
+                                        <!-- <label class="custom-file-label" >Choose file</label> -->
+                                        <input type="file"  name="file" (change)="handleFileInput($event)" class="form-control form-control-user" id="exampleRepeatPassword" >
+                                    </div>
+                                </div><br>
+
+
+
+
+                                <div class="form-group submtit">
+                                    <button class="ps-btn ps-btn--fullwidth" (click)="signup()">S'inscrire</button>
+                                </div>
+
+
+                                <div *ngIf="showSuccessMessage" class="alert alert-success">
+                                    Inscription réussie!
+                                </div>
+                                <div *ngIf="showErrorMessage" class="alert alert-danger">
+                                    Échec de l'inscription. Veuillez réessayer.
+                                </div>
+
+                                
+                                <br>
+                            </form>
+                            </div>
+                            <!-- <div class="ps-form__footer">
+                                <p>Connect with:</p>
+                                <ul class="ps-list--social">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+
+<br>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+    <footer class="ps-footer ps-footer--2">
+        <div class="container">
+            <div class="ps-footer__content">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                        <aside class="widget widget_footer">
+                            <h4 class="widget-title">Quick links</h4>
+                            <ul class="ps-list--link">
+                                <li><a href="policy.html">Policy</a></li>
+                                <li><a href="term-condition.html">Term & Condition</a></li>
+                                <li><a href="shipping.html">Shipping</a></li>
+                                <li><a href="return.html">Return</a></li>
+                                <li><a href="faqs.html">FAQs</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                        <aside class="widget widget_footer">
+                            <h4 class="widget-title">Company</h4>
+                            <ul class="ps-list--link">
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="affilate.html">Affilate</a></li>
+                                <li><a href="shipping.html">Career</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 ">
+                        <aside class="widget widget_footer">
+                            <h4 class="widget-title">Bussiness</h4>
+                            <ul class="ps-list--link">
+                                <li><a href="our-press.html">Our Press</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                                <li><a href="my-account.html">My account</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 ">
+                        <aside class="widget widget_newletters">
+                            <h4 class="widget-title">Newsletter</h4>
+                            <form class="ps-form--newletter" action="#" method="get">
+                                <div class="form-group--nest">
+                                    <input class="form-control" type="text" placeholder="Email Address">
+                                    <button class="ps-btn">Subscribe</button>
+                                </div>
+                                <ul class="ps-list--social">
+                                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </form>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div class="ps-footer__copyright">
+                <p>© 2021 Martfury. All Rights Reserved</p>
+                <p><span>We Using Safe Payment For:</span><a href="#"><img src="img/payment-method/1.jpg" alt=""></a><a href="#"><img src="img/payment-method/2.jpg" alt=""></a><a href="#"><img src="img/payment-method/3.jpg" alt=""></a><a href="#"><img src="img/payment-method/4.jpg" alt=""></a><a href="#"><img src="img/payment-method/5.jpg" alt=""></a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <div id="back2top"><i class="icon icon-arrow-up"></i></div>
+    <div class="ps-site-overlay"></div>
+ 
+    
+  
+ 
+    <div id="loader-wrapper">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+

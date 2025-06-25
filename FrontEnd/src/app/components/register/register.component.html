@@ -1,0 +1,195 @@
+
+<body class="auth">
+
+
+
+    <div class="form-wrapper">
+        <div class="container">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <div class="ltf-block-logo d-block d-lg-none text-center text-lg-start">
+                                    <img width="120" src="assets/tptlogovf.png" alt="logo">
+                                </div>
+                                <div class="my-5 text-center text-lg-start">
+                                    <h1 class="display-8">Créer un compte</h1>
+     
+                                    <!-- <p class="text-muted">You can create a free account now</p> -->
+
+
+                                    <!-- <form>
+                                        <p> Admin Or Provider ? </p>
+                                        <input type="radio" name = "ans" value="admin" > Admin 
+                                        <input type="radio" name = "ans" value="no" > Provider <br> <br>
+
+                                        
+                                    </form> -->
+
+
+
+
+
+
+
+                                    
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item"><a href="#admin" data-toggle="tab" class="nav-link active show">ADMIN</a>
+                                        </li>
+                                        <li class="nav-item"><a href="#provider" data-toggle="tab" class="nav-link">FOURNISSEUR</a>
+                                        </li>
+                                    </ul>
+
+
+                                </div>
+
+                            <div id="admin">
+
+                                <form class="mb-5" [formGroup]="adminsignupform">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" formControlName="username" placeholder="Saisir username" autofocus
+                                               required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" formControlName="email" placeholder="Saisir email"
+                                               required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" formControlName="password" placeholder="Saisir mot de passe"
+                                               required>
+                                    </div>
+
+                                    
+
+
+
+
+                                    <div class="input-group mb-3">
+                                        <!-- <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div> -->
+                                        <div class="custom-file">
+                                            <!-- <input type="file" class="custom-file-input"> -->
+                                            <!-- <label class="custom-file-label" >Choose file</label> -->
+                                            <input type="file"  name="file" (change)="handleFileInput($event)" class="form-control form-control-user" id="exampleRepeatPassword" >
+                                        </div>
+                                    </div>
+
+
+
+
+                            
+   
+ 
+                                    
+                                    <!-- <div class="mb-3">
+                                        <input type="password" class="form-control" placeholder="Re-enter password"
+                                               required>
+                                    </div> -->
+                                    <div class="text-center text-lg-start"> <br>
+                                        <button class="btn btn-primary" (click)="adminsignup()">S'inscrire</button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <div id="provider">
+                                
+
+                                <form class="mb-5" [formGroup]="providersignupform">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" formControlName="username" placeholder="Saisir username" autofocus
+                                               required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" formControlName="email" placeholder="Saisir email"
+                                               required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" formControlName="password" placeholder="Saisir password"
+                                               required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" formControlName="matricule" placeholder="Saisir matricule"
+                                               required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" formControlName="service" placeholder="Saisir service"
+                                               required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" formControlName="societe" placeholder="Saisir societe"
+                                               required>
+                                    </div>
+
+                                    
+
+
+
+
+                                    <div class="input-group mb-3">
+                                        <!-- <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div> -->
+                                        <div class="custom-file">
+                                            <!-- <input type="file" class="custom-file-input"> -->
+                                            <!-- <label class="custom-file-label" >Choose file</label> -->
+                                            <input type="file"  name="file" (change)="handleFileInput($event)" class="form-control form-control-user" id="exampleRepeatPassword" >
+                                        </div>
+                                    </div>
+
+
+
+
+                            
+   
+ 
+                                    
+                                    <!-- <div class="mb-3">
+                                        <input type="password" class="form-control" placeholder="Re-enter password"
+                                               required>
+                                    </div> -->
+                                    <div class="text-center text-lg-start"> <br>
+                                        <button class="btn btn-primary" (click)="providersignup()">S'inscrire</button>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                             
+
+
+                                <!-- <p class="text-center d-block d-lg-none mt-5 mt-lg-0">
+                                    Don't have an account? <a href="#">Sign In</a>.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-none d-lg-flex border-start align-items-center justify-content-between flex-column text-center">
+                        <div class="logo">
+                            <img width="120" src="assets/tptlogovf.png" alt="logo">
+                        </div>
+                        <div>
+                            <h3 class="fw-bold">Bienvenue !</h3>
+                            <p class="lead my-5">Vous avez déjà un compte ?</p>
+                            <a href="#" class="btn btn-primary" routerLink="">Login</a>
+                        </div>
+                        <ul class="list-inline">
+                            <!-- <li class="list-inline-item">
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">Terms & Conditions</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+

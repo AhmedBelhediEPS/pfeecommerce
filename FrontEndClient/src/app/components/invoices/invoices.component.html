@@ -1,0 +1,78 @@
+
+    <main class="ps-page--my-account">
+        
+        <section class="ps-section--account">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="ps-section__left">
+                            <aside class="ps-widget--account-dashboard">
+                                <div class="ps-widget__header"><img src="http://localhost:8080/client/files/{{customer?.image}}" alt="" />
+                                    <figure>
+                                        <figcaption>{{customer?.username}}</figcaption>
+                                        <p><a href="#"><span class="__cf_email__" data-cfemail="72070117001c131f1732151f131b1e5c111d1f">{{customer?.email}}</span></a></p>
+                                    </figure>
+                                </div>
+                                <div class="ps-widget__content">
+                                    <ul>
+                                        <li><a routerLink="/profile"><i class="icon-user"></i>  Informations</a></li>
+                                        <!-- <li><a href="#"><i class="icon-alarm-ringing"></i> Notifications</a></li> -->
+                                        <li class="active"><a routerLink="/invoices"><i class="icon-papers"></i> Factures</a></li>
+                                        <!-- <li><a href="#"><i class="icon-map-marker"></i> Address</a></li> -->
+                                        <!-- <li><a href="#"><i class="icon-store"></i> Recent Viewed Product</a></li> -->
+                                        <li><a href="#"><i class="icon-heart"></i> Wishlist</a></li>
+                                        <!-- <li><a href="#"><i class="icon-power-switch"></i>Logout</a></li> -->
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="ps-section__right">
+                            <div class="ps-section--account-setting">
+                                <div class="ps-section__header">
+                                    <h1>Vos factures :</h1>
+                                </div>
+                                <div class="ps-section__content">
+                                    <div class="table-responsive">
+                                        <table class="table ps-table ps-table--invoices">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Reference</th>
+                                                    <th>Date</th>
+                                                    <th>Montant</th>
+                                                    <th>Statut</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let p of listorder ; let index=index">
+                                                    <td><a href="invoice-detail.html">{{index+1}}</a></td>
+                                                    <td><a [routerLink]="['/invoicedetail',p.id]">{{p?.reference}}</a></td>
+                                                    <td>{{p?.date}}</td>
+                                                    <td>{{p?.prix}} DT</td>
+                                                    <td>Livré</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     
+    </main>
+   
+ 
+
+ 
+    <div id="loader-wrapper">
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+
+

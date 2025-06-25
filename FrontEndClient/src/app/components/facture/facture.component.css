@@ -1,0 +1,74 @@
+body{
+
+    background-color: #000;
+  }
+  
+  .padding{
+  
+    padding: 2rem !important;
+  }
+  
+  .card {
+      margin-bottom: 30px;
+      border: none;
+      -webkit-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+      -moz-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+      box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+  }
+  
+  .card-header {
+      background-color: #fff;
+      border-bottom: 1px solid #e6e6f2;
+  }
+  
+  h3 {
+      font-size: 20px;
+  }
+  
+  h5 {
+      font-size: 15px;
+      line-height: 26px;
+      color: #3d405c;
+      margin: 0px 0px 15px 0px;
+      font-family: 'Circular Std Medium';
+  }
+  
+  .text-dark {
+      color: #3d405c !important;
+  }
+
+
+
+
+
+
+
+
+  /* *********************************** */
+
+
+/* Cibler le bouton par la classe "btn" */
+.btn {
+  /* Ajouter des styles généraux au bouton ici */
+  font-size: 16px;
+  border-radius: 5px;
+  /* Autres propriétés de style */
+}
+
+/* Cibler le bouton avec la classe "btn-success" pour les styles spécifiques de succès */
+.btn-success {
+  background-color: goldenrod;
+  color: #ffffff;
+  /* Autres propriétés de style pour un bouton réussi */
+}
+
+/* Cibler le bouton avec la classe "btn-block" pour les styles de largeur maximale */
+.btn-block {
+  width: 100%;
+}
+
+/* Cibler le bouton avec la classe "btn" lorsqu'il est également "btn-success" et "btn-block" */
+/* .btn.btn-success.btn-block { */
+  /* Vous pouvez ajouter des styles spécifiques si nécessaire */
+  
+/* } */
